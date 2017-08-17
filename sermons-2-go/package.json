@@ -5,14 +5,49 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sass": "\"node-sass sass/main.scss -o css/main.css --expanded\";",
-    "watch:sass": "node-sass sass/main.scss -o css/main.css --expanded"
-
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:webpack",
+    "build:webpack": "webpack --config webpack.config.js -p",
+    "start": "webpack-dev-server --inline --config webpack.config.js --progress"
   },
-  "author": "",
+  "author": "Dave Buckthorpe",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^8.0.20",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.2.2",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "codelyzer": "^3.1.2",
+    "css-loader": "^0.28.4",
+    "css-raw-loader": "^0.1.2",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
-    "webpack": "^3.4.1"
+    "null-loader": "^0.1.1",
+    "reflect-metadata": "^0.1.10",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^2.3.2",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "@angular/common": "^4.0.2",
+    "@angular/compiler": "^4.0.2",
+    "@angular/core": "^4.0.2",
+    "@angular/forms": "^4.0.2",
+    "@angular/http": "^4.0.2",
+    "@angular/platform-browser": "^4.0.2",
+    "@angular/platform-browser-dynamic": "^4.0.2",
+    "@angular/router": "^4.0.2",
+    "core-js": "^2.4.1",
+    "ng2-wp-api": "^3.0.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
   }
 }
